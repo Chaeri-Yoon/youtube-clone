@@ -1,0 +1,19 @@
+.social-login {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  button {
+    width: 100%;
+  }
+  i {
+    margin-right: 10px;
+  }
+  .social-login--github {
+    background-color: $black;
+    margin-bottom: 10px;
+  }
+  .social-login--kakao {
+    background-color: #f6df00;
+  }
+}

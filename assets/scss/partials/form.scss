@@ -1,0 +1,34 @@
+.form__container {
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  form {
+    width: 100%;
+    width: $form-width;
+    margin-bottom: 50px;
+    div,
+    input[type="text"],
+    textarea {
+      padding: 10px;
+    }
+    input:not([type="file"]),
+    textarea,
+    .fileUpload {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $black;
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+    .fileUpload {
+      label {
+        font-weight: 300;
+        margin-right: 10px;
+      }
+    }
+  }
+}

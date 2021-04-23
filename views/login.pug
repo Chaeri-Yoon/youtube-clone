@@ -1,0 +1,9 @@
+extends layouts/main
+
+block content
+    .form__container
+        form(action=routes.login, method="post")
+            input(type="text", name="email", placeholder="Email",  required)
+            input(type="password", name="password", placeholder="Password", required) 
+            input.btn__standard(type="submit", value="Log In")
+        include partials/socialLogin
