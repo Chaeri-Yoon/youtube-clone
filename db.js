@@ -1,15 +1,7 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
-/*
-const MongoClient = require('mongodb').MongoClient;
-const uri = process.env.MONGOATLAS_URL;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db(process.env.DB_NAME).collection("users");
-  client.close();
-});
-*/
+
 mongoose.connect(process.env.MONGOATLAS_URL, 
     {
     useNewUrlParser: true,
