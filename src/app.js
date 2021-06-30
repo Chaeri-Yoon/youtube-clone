@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import passport from "passport";
 import MongoStore from "connect-mongo";
 import session from "express-session";
+import path from "path";
 import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
@@ -19,8 +20,8 @@ app.use(helmet({
     contentSecurityPolicy: false
 }));
 app.set('view engine', "pug");
-app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static("static"));
+app.set('views', process.cwd() + "/src/views");
+app.use("/static", express.static(path.join(__dirname, "static")));
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended : true}));
