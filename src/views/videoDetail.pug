@@ -13,8 +13,8 @@ block content
                         button.btn__standard.btn__edit-video Edit video
             h5.video__title=video.title
             p.video__description=video.description
-            if video.views === 1
-                span.video__views 1 view
+            if video.views <= 1
+                span.video__views #{video.views} view
             else 
                 span.video__views #{video.views} views
             .video__author
@@ -34,7 +34,7 @@ block content
                 ul.video__comments-list#jsCommentList
                     each comment in video.comments.reverse()
                         li
-                            span.text__comment=comment.text
+                                span.text__comment=comment.text
                             if(loggedUser)
-                                if loggedUser.id === comment.creator.toString()
+                                if loggedUser.id === comment.creator.id.toString()
                                     button.btn__delete-comment#jsDeleteBtn(name=comment.id) ❌

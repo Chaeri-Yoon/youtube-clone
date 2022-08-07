@@ -3,11 +3,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .user-profile {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .user-photo {
+      background-color: black;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
       border: 1px solid $black;
       width: 100px;
       height: 100px;
@@ -15,17 +21,26 @@
       margin-bottom: 10px;
     }
   }
+
   .btns__user-profile {
     width: 100%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     a:first-child {
       margin-bottom: 10px;
     }
   }
+
   .uploaded-videos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
     &,
     .videoBlock {
       margin-top: 10px;

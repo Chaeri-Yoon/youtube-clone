@@ -67,7 +67,6 @@ function goFullScreen() {
 }
 
 const formatDate = seconds => {
-  console.log(seconds);
   const secondsNumber = parseInt(seconds, 10);
   let hours = Math.floor(secondsNumber / 3600);
   let minutes = Math.floor((secondsNumber - hours * 3600) / 60);
@@ -95,7 +94,7 @@ function setTotalTime() {
   setInterval(getCurrentTime, 1000);
 }
 
-function handleEnded() {
+function handleViewed() {
   registerView();
   videoPlayer.currentTime = 0;
   playBtn.innerHTML = '<i class="fas fa-play"></i>';
@@ -114,20 +113,20 @@ function handleDrag(event) {
     volumeBtn.innerHTML = '<i class="fas fa-volume-off"></i>';
   }
 }
-function displayControlBar(_isDisplay){
+function displayControlBar(_isDisplay) {
   controlBar.style.opacity = _isDisplay ? "1" : "0";
 }
 
 function init() {
   videoPlayer.volume = 0.5;
-  
+
   videoContainer.addEventListener("mouseover", () => displayControlBar(true));
   videoContainer.addEventListener("mouseout", () => displayControlBar(false));
   playBtn.addEventListener("click", handlePlayClick);
+  playBtn.addEventListener("click", handleViewed);
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScrnBtn.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
-  videoPlayer.addEventListener("ended", handleEnded);
   volumeRange.addEventListener("input", handleDrag);
 }
 
