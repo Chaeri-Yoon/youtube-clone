@@ -34,7 +34,7 @@ block content
                 ul.video__comments-list#jsCommentList
                     each comment in video.comments.reverse()
                         li
-                                span.text__comment=comment.text
+                            span.text__comment=comment.text
                             if(loggedUser)
-                                if loggedUser.id === comment.creator.id.toString()
+                                if loggedUser.id === comment.creator.toString()
                                     button.btn__delete-comment#jsDeleteBtn(name=comment.id) ❌
