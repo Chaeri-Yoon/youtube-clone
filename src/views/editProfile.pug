@@ -5,9 +5,9 @@ block content
         form(action=`/users${routes.editProfile}`, method="post", enctype="multipart/form-data")
             .fileUpload
                 label(for="avatar") Avatar
-                input(type="file", id="avatar", name="avatar", accpet="image/*")
+                input(type="file", id="avatar", name="avatar", accept="image/*")
             input(type="text", placeholder="Name" name="name" value=loggedUser.name)
-            input(type="email", placeholder="Email" name="email" value=loggedUser.email)
+            input(type="email", placeholder="Email" name="email" value=loggedUser.email readonly)
             input.btn__standard(type="submit", value="Update Profile")
         if(loggedUser.githubId == null && loggedUser.kakaoId == null)
             a.form-container__link(href=`/users${routes.changePassword}`)
