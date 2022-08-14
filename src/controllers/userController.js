@@ -85,8 +85,10 @@ export const postKakaoLogin = (req, res) => {
     res.redirect(routes.home);
 }
 export const logout = (req, res) => {
-    req.logout();
-    res.redirect(routes.home);
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
 }
 export const getMe = async (req, res) => {
     try {
