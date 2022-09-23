@@ -32,7 +32,7 @@ app.use(session({
     secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URL })
+    store: MongoStore.create({ mongoUrl: process.env.MONGOATLAS_URL })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
