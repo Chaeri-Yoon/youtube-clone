@@ -4,7 +4,8 @@
   "description": "",
   "main": "init.js",
   "engines": {
-    "node": "16.16.0"
+    "node": "16.16.0",
+    "npm": "8.11.0"
   },
   "scripts": {
     "start": "node build/init.js",
@@ -26,21 +27,22 @@
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
     "body-parser": "^1.19.0",
-    "connect-mongo": "^4.4.1",
+    "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^2.1.0",
     "helmet": "^4.5.0",
     "mini-css-extract-plugin": "^1.5.0",
-    "mongodb": "^3.6.6",
+    "mongodb": "^4.1.0",
     "mongoose": "^5.12.5",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "node-sass": "^5.0.0",
-    "passport": "^0.4.1",
+    "node-sass": "^7.0.3",
+    "passport": "^0.6.0",
     "passport-github": "^1.1.0",
     "passport-kakao": "^1.0.1",
     "passport-local": "^1.0.0",
@@ -50,8 +52,7 @@
     "pug": "^3.0.2",
     "sass-loader": "^11.0.1",
     "webpack": "^5.35.1",
-    "webpack-cli": "^4.6.0",
-    "cross-env": "^7.0.3"
+    "webpack-cli": "^4.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
