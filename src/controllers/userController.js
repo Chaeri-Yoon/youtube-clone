@@ -119,8 +119,8 @@ export const postEditProfile = async (req, res) => {
         body: { name },
         file
     } = req;
-    let avatarUrl = file ? file.path : req.user.avatarUrl;
-    if (avatarUrl !== undefined) avatarUrl = !avatarUrl.includes("https://") ? `../${avatarUrl}` : avatarUrl;
+    let avatarUrl = file ? file.path : (req.user.avatarUrl || '');
+    if (avatarUrl && avatarUrl.length > 0) avatarUrl = !avatarUrl.includes("https://") ? `../${avatarUrl}` : avatarUrl;
 
     try {
         await User.findByIdAndUpdate(req.user.id, {

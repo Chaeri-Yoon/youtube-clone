@@ -4,7 +4,7 @@ include mixins/videoBlock
 block content
     .user-detail
         .user-profile 
-            .user-photo(style=`background-image: url('${user.avatarUrl ? user.avatarUrl.replaceAll('\\', '/') : null}')`)
+            .user-photo(style=`background-image: url('${user.avatarUrl ? user.avatarUrl.replaceAll('\\', '/') : ''}')`)
             h4.user-name= user.name
         if loggedUser != null
             if user.id == loggedUser.id 
